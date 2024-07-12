@@ -47,9 +47,7 @@ WA.onInit().then(() => {
 
     });
 
-    WA.room.onLeaveLayer("visibleNote").subscribe(async () => {
-        noteWebsite.close();
-    });
+ 
 
     function closePopup(){
     if (currentPopup !== undefined) {
@@ -59,5 +57,7 @@ WA.onInit().then(() => {
 }
 }).catch(e => console.error(e));
 
-
+   WA.room.onLeaveLayer("visibleNote").subscribe(async () => {
+        noteWebsite.close();
+    });
 export {};
