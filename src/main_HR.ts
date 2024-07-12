@@ -24,19 +24,7 @@ WA.onInit().then(() => {
         console.log('Scripting API Extra ready');
     }).catch(e => console.error(e));
 
-}).catch(e => console.error(e));
-
-function closePopup(){
-    if (currentPopup !== undefined) {
-        currentPopup.close();
-        currentPopup = undefined;
-    }
-}
-// Waiting for the API to be ready
-WA.onInit().then(() => {
-    console.log('Scripting API ready');
-
-    let noteWebsite: any;
+        let noteWebsite: any;
 
     WA.room.onEnterLayer("visibleNote").subscribe(async () => {
         console.log("Entering visibleNote layer");
@@ -64,6 +52,14 @@ WA.onInit().then(() => {
     });
 
 }).catch(e => console.error(e));
+
+function closePopup(){
+    if (currentPopup !== undefined) {
+        currentPopup.close();
+        currentPopup = undefined;
+    }
+}
+
 export {};
 
 
