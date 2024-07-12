@@ -32,9 +32,6 @@ function closePopup(){
         currentPopup = undefined;
     }
 }
-export {};
-console.log('Script started successfully');
-
 // Waiting for the API to be ready
 WA.onInit().then(() => {
     console.log('Scripting API ready');
@@ -67,5 +64,7 @@ WA.onInit().then(() => {
     });
 
 }).catch(e => console.error(e));
-
 export {};
+
+
+
