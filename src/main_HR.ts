@@ -33,7 +33,7 @@ function closePopup(){
     }
 }
 export {};
-onsole.log('Script started successfully');
+console.log('Script started successfully');
 
 // Waiting for the API to be ready
 WA.onInit().then(() => {
