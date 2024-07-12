@@ -5,7 +5,7 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 console.log('Script started successfully');
 
 let currentPopup: any = undefined;
-   let noteWebsite: any;
+
 // Waiting for the API to be ready
 WA.onInit().then(() => {
     console.log('Scripting API ready');
@@ -24,7 +24,7 @@ WA.onInit().then(() => {
         console.log('Scripting API Extra ready');
     }).catch(e => console.error(e));
  
-      
+       let noteWebsite: any;  
     WA.room.onEnterLayer("visibleNote").subscribe(async () => {
         console.log("Entering visibleNote layer");
 
@@ -44,6 +44,10 @@ WA.onInit().then(() => {
             allowApi: true,
         });
 
+      WA.room.onLeaveLayer("visibleNote").subscribe(async () => {
+        noteWebsite.close();
+    });
+       
     });
     
 
@@ -56,9 +60,7 @@ WA.onInit().then(() => {
 }
 }).catch(e => console.error(e));
 
-   WA.room.onLeaveLayer("visibleNote").subscribe(async () => {
-        noteWebsite.close();
-    });
+
  
 
 export {};
