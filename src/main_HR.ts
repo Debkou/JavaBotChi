@@ -51,12 +51,13 @@ WA.onInit().then(() => {
         noteWebsite.close();
     });
 
-}).catch(e => console.error(e));
-
-function closePopup(){
+    function closePopup(){
     if (currentPopup !== undefined) {
         currentPopup.close();
         currentPopup = undefined;
     }
 }
+}).catch(e => console.error(e));
+
+
 export {};
