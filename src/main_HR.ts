@@ -24,9 +24,7 @@ WA.onInit().then(() => {
         console.log('Scripting API Extra ready');
     }).catch(e => console.error(e));
 
-}).catch(e => console.error(e));
-
-WA.onInit().then(() => {
+    WA.onInit().then(() => {
     console.log('Scripting API ready');
 
     let noteWebsite: any;
@@ -35,7 +33,7 @@ WA.onInit().then(() => {
         console.log("Entering visibleNote layer");
 
         noteWebsite = await WA.ui.website.open({
-            url: "src/note.html",
+            url: "./note.html",
             position: {
                 vertical: "top",
                 horizontal: "middle",
@@ -57,6 +55,10 @@ WA.onInit().then(() => {
     });
 
 }).catch(e => console.error(e));
+
+
+}).catch(e => console.error(e));
+
 
 
 function closePopup(){
